@@ -1,5 +1,5 @@
 // GY-80 IMU Library especially written for use with Teensy 3.6
-// Code written by Marcelo Maroñas @ Minerva Rockets (Federal University of Rio de Janeiro Rocketry Team) - February 19, 2018
+// Code written by Marcelo MaroÃ±as @ Minerva Rockets (Federal University of Rio de Janeiro Rocketry Team) - February 19, 2018
 // Using Adafruit Libraries.
 // Contact : marcelomaronas at poli.ufrj.br
 // For more codes : github.com/engmaronas
@@ -11,12 +11,15 @@
 #include <L3G.h>
 #include <Adafruit_HMC5883_U.h>
 
+#ifndef GY80TEENSY
+#define GY80TEENSY
+
 typedef struct 
 {
-  double acelerometro[3]; //Posições 1,2,3, respectivamente são as Acelerações em x,y,z
-  int magnetometro[3]; //Posições 1,2,3, respectivamente são as Campos Magnéticos em x,y,z
-  int giroscopio[3]; //Posições 1, 2, 3, respectivamente são a velocidade angular em x,y,z
-  double barometro[3]; //Posições 1,2,3 respectivamente são Pressao, Altura e Temperatura
+  double acelerometro[3]; //PosiÃ§Ãµes 1,2,3, respectivamente sÃ£o as AceleraÃ§Ãµes em x,y,z
+  int magnetometro[3]; //PosiÃ§Ãµes 1,2,3, respectivamente sÃ£o as Campos MagnÃ©ticos em x,y,z
+  int giroscopio[3]; //PosiÃ§Ãµes 1, 2, 3, respectivamente sÃ£o a velocidade angular em x,y,z
+  double barometro[3]; //PosiÃ§Ãµes 1,2,3 respectivamente sÃ£o Pressao, Altura e Temperatura
 }IMU_s; //IMU Structure
 
 //Functions headers
@@ -37,3 +40,5 @@ void InitMag();
 void InitBMP();
 
 //Functions headers
+
+#endif
